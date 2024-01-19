@@ -1,5 +1,6 @@
 #include "Person.hpp"
 #include <vector>
+#include <sstream>
 
 int main()
 {
@@ -22,10 +23,13 @@ int main()
         people.push_back(person);
         nb--;
     }
-    std::cout << "Les personnes sont ";
+    std::stringstream builder; 
+    builder << "Les personnes sont ";
     for (int i = 0; i < people.size() - 1; i++)
     {
-        std::cout << people[i].get_first_name() << " " << people[i].get_surname() << ",";
+        builder << people[i].get_first_name() << " " << people[i].get_surname() << ",";
     }
-    std::cout << people[people.size() - 1].get_first_name() << " " << people[people.size() - 1].get_surname() << "." << std::endl;
-};
+    builder << people[people.size() - 1].get_first_name() << " " << people[people.size() - 1].get_surname() << "." << std::endl;
+    std::cout << builder.str();
+    return 0;
+}
