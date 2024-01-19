@@ -3,7 +3,7 @@
 int main()
 {
     Person person;
-    person.first_name = "Paluche";
-    person.surname = "La Faluche";
-    std::cout << "La personne s'appelle " << person.first_name << " " << person.surname << std::endl;
+    person.set_first_name("Paluche");
+    person.set_surname("La Faluche");
+    std::cout << "La personne s'appelle " << person.get_first_name() << " " << person.get_surname() << std::endl;
 }
